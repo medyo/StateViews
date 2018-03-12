@@ -1,7 +1,7 @@
 # State Views for Android (BETA version)
 Create & Show progress, data or error views, the easy way!
 
-<img src="/art/StatusPage.png" width="80%" alt="Android States Page Cover"/>
+<img src="/art/StatusPage.jpg" width="80%" alt="Android States Page Cover"/>
 
 This library allows to handle the different app states, from loading... to displaying
 data or error views, the library is tiny and fully customizable
@@ -25,7 +25,7 @@ mStatusPage.displayState("TAG");
 ## Setup (Not yet released)
 
 ## Usage
-[medyo/android-about-page/app/](https://github.com/medyo/android-about-page/tree/master/app)
+[medyo/StateViews/app/](https://github.com/medyo/StateViews/tree/master/app)
 
 ### 1. Available attributes for PageStatus Builder
 
