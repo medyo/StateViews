@@ -23,7 +23,7 @@ mStatusPage.displayState("TAG");
 ```
 
 ## Setup (Available Only on JitPack)
-[![Snapshot](https://jitpack.io/v/User/Repo.svg?style=flat-square)]
+[![Snapshot](https://jitpack.io/v/medyo/stateviews.svg?style=flat-square)]
 (https://jitpack.io/private#medyo/stateviews/-SNAPSHOT)
 
 ## Usage
