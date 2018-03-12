@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Library theme -->
+    <style name="StatusPage"/>
+    <style name="StatusPage.title" parent="@android:style/TextAppearance.Medium"/>
+    <style name="StatusPage.description" parent="@android:style/TextAppearance.Small"/>
+</resources>
