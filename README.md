@@ -23,8 +23,7 @@ mStatusPage.displayState("TAG");
 ```
 
 ## Setup (Available Only on JitPack)
-[![Snapshot](https://jitpack.io/v/medyo/stateviews.svg?style=flat-square)]
-(https://jitpack.io/private#medyo/stateviews/-SNAPSHOT)
+[![Snapshot](https://jitpack.io/v/medyo/stateviews.svg?style=flat-square)](https://jitpack.io/private#medyo/stateviews/-SNAPSHOT)
 
 ## Usage
 [medyo/StateViews/app/](https://github.com/medyo/StateViews/tree/master/app)
@@ -53,7 +52,21 @@ mStatusPage.displayState("TAG");
 | applyGravity(Int) | Set Gravity for the View  |
 
 ### 3. Samples
-Custom Samples Here
+#### Display an Error View
+
+![No Connection](/art/no_connection.jpg)
+
+```java
+StateViewsBuilder
+                .init(this)
+                .setIconColor(Color.parseColor("#D2D5DA"))
+                .addState("error",
+                "No Connection",
+                "Error retrieving information from server.",
+                AppCompatResources.getDrawable(this, R.drawable.ic_server_error),
+                "Retry");
+```
+
 
 ## License
 
