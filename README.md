@@ -61,10 +61,10 @@ StateViewsBuilder
                 .init(this)
                 .setIconColor(Color.parseColor("#D2D5DA"))
                 .addState("error",
-                "No Connection",
-                "Error retrieving information from server.",
-                AppCompatResources.getDrawable(this, R.drawable.ic_server_error),
-                "Retry");
+                    "No Connection",
+                    "Error retrieving information from server.",
+                    AppCompatResources.getDrawable(this, R.drawable.ic_server_error),
+                    "Retry");
 ```
 
 
