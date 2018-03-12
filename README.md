@@ -22,7 +22,9 @@ PageStatusBuilder
 mStatusPage.displayState("TAG");
 ```
 
-## Setup (Not yet released)
+## Setup (Available Only on JitPack)
+[![Snapshot](https://jitpack.io/v/User/Repo.svg?style=flat-square)]
+(https://jitpack.io/private#medyo/stateviews/-SNAPSHOT)
 
 ## Usage
 [medyo/StateViews/app/](https://github.com/medyo/StateViews/tree/master/app)
