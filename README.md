@@ -52,7 +52,7 @@ compile 'com.github.medyo:state-views:0.1'
 | ------------- |:-------------:|
 | addState(params) | Create a new state|
 | setIconColor(Int) | Set Icon color |
-| setIconSize(Intent) | Set Icon Size |
+| setIconSize(Int) | Set Icon Size |
 | setTextColor(Int) |  set Title and description colors|
 | setFontFace(String) | Set Custom font |
 | setButtonBackgroundColor(Int) | Set Button Background color|
