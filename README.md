@@ -3,8 +3,9 @@ Create & Show progress, data or error views, the easy way!
 
 <img src="/art/StatusPage.jpg" width="80%" alt="Android States Page Cover"/>
 
-This library allows to handle the different app states, from loading... to displaying
-data or error views, the library is tiny and fully customizable
+
+StateViews is based on ViewSwitcher mechanism and allows to handle the different app states, from loading... to displaying
+data and error views, the library is tiny and fully customizable.
 
 ```xml
 <sakout.mehdi.StateViews.StateView
@@ -100,6 +101,12 @@ addState(
 
 mStatusPage.displayState("TAG_NO_RESULTS");
 ```
+
+## Contribute
+Contributions are welcome!
+
+## ProGuard
+Nothing to include
 
 ## License
 
