@@ -6,6 +6,22 @@ Create & Show progress, data or error views, the easy way!
 This library allows to handle the different app states, from loading... to displaying
 data or error views, the library is tiny and fully customizable
 
+```
+<sakout.mehdi.StateViews.StateView
+        android:id="@+id/status_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Hello World!" />
+
+ </sakout.mehdi.StateViews.StateView>
+```
+Then Add your custom states
+
 ```java
 // Create your necessary states
 PageStatusBuilder
@@ -21,6 +37,16 @@ PageStatusBuilder
 // Show the state by TAG id
 mStatusPage.displayState("TAG");
 ```
+
+Now, yo navigate between states, just call!
+
+```
+mStatusPage.displayLoadingState();
+// or
+mStatusPage.displayState("error");
+```
+
+
 
 ## Setup
 [![Snapshot](https://jitpack.io/v/medyo/stateviews.svg?style=flat-square)](https://jitpack.io/private#medyo/stateviews/-SNAPSHOT)
