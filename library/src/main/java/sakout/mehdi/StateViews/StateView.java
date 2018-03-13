@@ -1,4 +1,4 @@
-package sakout.mehdi.StateViews.library;
+package sakout.mehdi.StateViews;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -21,6 +21,8 @@ import android.widget.ViewFlipper;
 import java.util.Arrays;
 import java.util.List;
 
+import sakout.mehdi.StateViews.library.R;
+
 /**
  * Created by medyo on 7/24/17.
  * This view plays as a wrapper for our different stats: Loading, Error and Normal
@@ -33,13 +35,7 @@ public class StateView extends ViewFlipper {
      */
 
     StateViewsBuilder mBuilder;
-
-    public enum STATES {
-        LOADING
-    }
-
     LayoutInflater mInflater;
-
     OnClickListener mOnClickListener;
 
     public StateView(Context context) {
@@ -52,18 +48,18 @@ public class StateView extends ViewFlipper {
         setupView(attrs);
     }
 
-    private void setupView(AttributeSet attrs){
+    private void setupView(AttributeSet attrs) {
 
         // TODO: Add support of dynamic styles
 
-        if (isInEditMode()){
+        if (isInEditMode()) {
             return;
         }
 
         handleStates();
     }
 
-    private void handleStates(){
+    private void handleStates() {
 
         mInflater = LayoutInflater.from(getContext());
 
@@ -83,15 +79,14 @@ public class StateView extends ViewFlipper {
 
     }
 
-
-    public void addCustomState(String tag, String title, String description, Drawable icon, String buttonTitle){
+    public void addCustomState(String tag, String title, String description, Drawable icon, String buttonTitle) {
 
         StateViewsBuilder builder = mBuilder;
-        if (builder == null){
+        if (builder == null) {
             builder = StateViewsBuilder.getInstance();
         }
 
-        LinearLayout view = (LinearLayout) mInflater.inflate(R.layout.state_custom, null,false);
+        LinearLayout view = (LinearLayout) mInflater.inflate(R.layout.state_custom, null, false);
 
         setTitleValue(view, title, builder.getTextColor(), builder.getFont());
         setDescriptionValue(view, description, builder.getTextColor(), builder.getFont());
@@ -101,6 +96,7 @@ public class StateView extends ViewFlipper {
         view.setTag(tag);
         addView(view, getChildCount());
     }
+
     private void applyCustomStyle(StateViewsBuilder builder, List<StateModel> states) {
 
         /*
@@ -109,21 +105,21 @@ public class StateView extends ViewFlipper {
 
         for (int i = 0; i < states.size(); i++) {
             StateModel state = states.get(i);
-            int position = i+1;
+            int position = i + 1;
             if (state.getCustom()) {
 
-                if (state.getView() != null){
+                if (state.getView() != null) {
                     View view = state.getView();
                     view.setTag(state.getTag());
                     addView(view, position);
 
-                } else if (state.getLayoutId() != null){
-                    View view = mInflater.inflate(state.getLayoutId(), null,false);
+                } else if (state.getLayoutId() != null) {
+                    View view = mInflater.inflate(state.getLayoutId(), null, false);
                     view.setTag(state.getTag());
                     addView(view, position);
                 }
             } else {
-                LinearLayout view = (LinearLayout) mInflater.inflate(R.layout.state_custom, null,false);
+                LinearLayout view = (LinearLayout) mInflater.inflate(R.layout.state_custom, null, false);
 
                 setTitleValue(view, state.getTitle(), builder.getTextColor(), builder.getFont());
                 setDescriptionValue(view, state.getDescription(), builder.getTextColor(), builder.getFont());
@@ -137,7 +133,7 @@ public class StateView extends ViewFlipper {
 
     }
 
-    public void applyGravity(Integer gravity){
+    public void applyGravity(Integer gravity) {
 
         StateViewsBuilder builder = mBuilder;
 
@@ -145,7 +141,7 @@ public class StateView extends ViewFlipper {
             builder = StateViewsBuilder.getInstance();
         }
 
-        if (builder == null){
+        if (builder == null) {
             return;
         }
 
@@ -159,9 +155,9 @@ public class StateView extends ViewFlipper {
         for (int i = 0; i < getChildCount(); i++) {
             View view = getChildAt(i);
 
-            if (view.getTag() != null && Arrays.asList(inlineStates).contains(view.getTag().toString())){
+            if (view.getTag() != null && Arrays.asList(inlineStates).contains(view.getTag().toString())) {
 
-                if (view instanceof LinearLayout){
+                if (view instanceof LinearLayout) {
                     ((LinearLayout) view).setGravity(gravity);
                 }
 
@@ -169,13 +165,13 @@ public class StateView extends ViewFlipper {
         }
 
 
-
     }
-    private Boolean hasPrivateConfiguration(){
+
+    private Boolean hasPrivateConfiguration() {
         return mBuilder != null;
     }
 
-    public void setPrivateConfiguration(StateViewsBuilder builder){
+    public void setPrivateConfiguration(StateViewsBuilder builder) {
         this.mBuilder = builder;
     }
 
@@ -183,12 +179,12 @@ public class StateView extends ViewFlipper {
      * Display the show progress View
      */
     @NonNull
-    public void displayLoadingState(){
+    public void displayLoadingState() {
         setDisplayedChild(0);
     }
 
     @NonNull
-    public void displayState(String tagName){
+    public void displayState(String tagName) {
 
         Boolean found = false;
         for (int i = 0; i < getChildCount(); i++) {
@@ -200,16 +196,16 @@ public class StateView extends ViewFlipper {
             }
         }
 
-        if (!found){
-           Log.e(TAG, "Tag name Incorrect or not found");
+        if (!found) {
+            Log.e(TAG, "Tag name Incorrect or not found");
         }
     }
 
     @NonNull
-    public void hideStates(){
+    public void hideStates() {
 
         for (int i = 0; i < getChildCount(); i++) {
-            if (getChildAt(i).getTag() == null){
+            if (getChildAt(i).getTag() == null) {
                 setDisplayedChild(i);
             }
 
@@ -218,20 +214,21 @@ public class StateView extends ViewFlipper {
 
     /**
      * Return a view based on layout id
+     *
      * @param layout Layout Id
-     * @param tag Layout Tag
+     * @param tag    Layout Tag
      * @return View
      */
-    private View getViewByLayoutId(int layout, String tag){
+    private View getViewByLayoutId(int layout, String tag) {
 
-        View view = mInflater.inflate(layout, null,false);
+        View view = mInflater.inflate(layout, null, false);
         view.setTag(tag);
         view.setVisibility(View.GONE);
 
         return view;
     }
 
-    private void setTitleValue(View view, String value, Integer color, Typeface typeface){
+    private void setTitleValue(View view, String value, Integer color, Typeface typeface) {
         TextView mTextView = view.findViewById(R.id.state_title);
         mTextView.setGravity(Gravity.CENTER_HORIZONTAL);
         setTextColor(mTextView, color);
@@ -245,19 +242,19 @@ public class StateView extends ViewFlipper {
     }
 
     private void setTextFont(TextView mTextView, Typeface typeface) {
-        if (typeface != null){
+        if (typeface != null) {
             mTextView.setTypeface(typeface);
         }
     }
 
-    private void setTextColor(TextView textView, Integer color){
+    private void setTextColor(TextView textView, Integer color) {
 
-        if (color != null){
+        if (color != null) {
             textView.setTextColor(color);
         }
     }
 
-    private void setDescriptionValue(View view, String value, Integer color, Typeface typeface){
+    private void setDescriptionValue(View view, String value, Integer color, Typeface typeface) {
         TextView mTextView = view.findViewById(R.id.state_description);
         mTextView.setGravity(Gravity.CENTER_HORIZONTAL);
         setTextColor(mTextView, color);
@@ -270,11 +267,11 @@ public class StateView extends ViewFlipper {
         }
     }
 
-    public void setOnStateButtonClicked(OnClickListener clickListener){
+    public void setOnStateButtonClicked(OnClickListener clickListener) {
         mOnClickListener = clickListener;
 
         for (int i = 0; i < getChildCount(); i++) {
-            if (getChildAt(i).getTag() != null){
+            if (getChildAt(i).getTag() != null) {
 
                 View view = getChildAt(i);
 
@@ -287,15 +284,16 @@ public class StateView extends ViewFlipper {
 
         }
     }
+
     private void setButtonStyle(View view, String buttonTitle, Typeface typeface, Integer buttonBackgroundColor, Integer buttonTextColor) {
         Button button = view.findViewById(R.id.state_button);
         setButtonFont(button, typeface);
 
-        if (buttonBackgroundColor != null){
+        if (buttonBackgroundColor != null) {
             button.getBackground().setColorFilter(buttonBackgroundColor, PorterDuff.Mode.MULTIPLY);
         }
 
-        if (buttonTextColor != null){
+        if (buttonTextColor != null) {
             button.setTextColor(buttonTextColor);
         }
 
@@ -322,7 +320,7 @@ public class StateView extends ViewFlipper {
         } else {
             TypedValue typedValue = new TypedValue();
             getContext().getTheme().resolveAttribute(R.attr.colorAccent, typedValue, true);
-            mImageView.setColorFilter( typedValue.data, android.graphics.PorterDuff.Mode.SRC_IN);
+            mImageView.setColorFilter(typedValue.data, android.graphics.PorterDuff.Mode.SRC_IN);
         }
 
         if (iconSize > 0) {
@@ -336,6 +334,10 @@ public class StateView extends ViewFlipper {
         } else {
             mImageView.setVisibility(View.GONE);
         }
+    }
+
+    public enum STATES {
+        LOADING
     }
 
 

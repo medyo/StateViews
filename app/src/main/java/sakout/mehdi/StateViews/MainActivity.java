@@ -6,8 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import sakout.mehdi.StateViews.library.StateView;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     StateView mStatusPage;
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.button_loading){
+        if (view.getId() == R.id.button_loading) {
             mStatusPage.displayLoadingState();
         } else if (view.getId() == R.id.button_error) {
             mStatusPage.displayState("error");

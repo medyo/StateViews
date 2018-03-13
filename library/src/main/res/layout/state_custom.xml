@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/state_icon"
         android:layout_width="@dimen/icon_size"
         android:layout_height="@dimen/icon_size"
-        android:scaleType="fitCenter"
-        android:layout_marginBottom="@dimen/state_item_margin_bottom"/>
+        android:layout_marginBottom="@dimen/state_item_margin_bottom"
+        android:scaleType="fitCenter" />
 
     <TextView
         android:id="@+id/state_title"
+        style="@style/StatusPage.title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Failure"
-        style="@style/StatusPage.title"
-        android:layout_marginBottom="@dimen/state_item_margin_bottom"/>
+        android:layout_marginBottom="@dimen/state_item_margin_bottom"
+        android:text="Failure" />
 
     <TextView
         android:id="@+id/state_description"
+        style="@style/StatusPage.description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Could not load content! "
-        style="@style/StatusPage.description"
+        android:layout_marginBottom="@dimen/state_item_margin_bottom"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="@dimen/state_item_margin_bottom"/>
+        android:text="Could not load content! " />
 
     <Button
         android:id="@+id/state_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Refresh"/>
+        android:text="Refresh" />
 
 </LinearLayout>

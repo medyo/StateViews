@@ -1,44 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="sakout.mehdi.StateViews.MainActivity">
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="sakout.mehdi.StateViews.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Loading"
-            android:id="@+id/button_loading"/>
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <Button
+            android:id="@+id/button_loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Error"
-            android:id="@+id/button_error"/>
+            android:text="Loading" />
 
         <Button
+            android:id="@+id/button_error"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Custom"
-            android:id="@+id/button_custom"/>
+            android:text="Error" />
+
+        <Button
+            android:id="@+id/button_custom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Custom" />
     </LinearLayout>
 
-    <sakout.mehdi.StateViews.library.StateView
+    <sakout.mehdi.StateViews.StateView
         android:id="@+id/status_page"
-        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Hello World!"/>
+            android:text="Hello World!" />
 
-    </sakout.mehdi.StateViews.library.StateView>
+    </sakout.mehdi.StateViews.StateView>
 
 </android.support.design.widget.CoordinatorLayout>

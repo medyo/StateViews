@@ -1,4 +1,4 @@
-package sakout.mehdi.StateViews.library;
+package sakout.mehdi.StateViews;
 
 import android.graphics.drawable.Drawable;
 import android.view.View;

@@ -4,8 +4,6 @@ import android.app.Application;
 import android.graphics.Color;
 import android.support.v7.content.res.AppCompatResources;
 
-import sakout.mehdi.StateViews.library.StateViewsBuilder;
-
 /**
  * Created by medyo on 11/20/17.
  */
@@ -13,7 +11,7 @@ import sakout.mehdi.StateViews.library.StateViewsBuilder;
 public class App extends Application {
 
     @Override
-    public void onCreate(){
+    public void onCreate() {
         super.onCreate();
 
         StateViewsBuilder
