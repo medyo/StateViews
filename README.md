@@ -25,12 +25,7 @@ mStatusPage.displayState("TAG");
 ## Setup
 [![Snapshot](https://jitpack.io/v/medyo/stateviews.svg?style=flat-square)](https://jitpack.io/private#medyo/stateviews/-SNAPSHOT)
 ```
-maven {
-    url 'https://dl.bintray.com/medyo/maven/com/github/medyo/'
-}
-
 compile 'com.github.medyo:state-views:0.1'
-
 ```
 
 ## Usage
