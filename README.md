@@ -29,7 +29,9 @@ maven {
     url 'https://dl.bintray.com/medyo/maven/com/github/medyo/'
 }
 
-compile 'com.github.medyo:state-views:0.1'`
+compile 'com.github.medyo:state-views:0.1'
+
+```
 
 ## Usage
 [medyo/StateViews/app/](https://github.com/medyo/StateViews/tree/master/app)
