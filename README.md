@@ -6,7 +6,7 @@ Create & Show progress, data or error views, the easy way!
 This library allows to handle the different app states, from loading... to displaying
 data or error views, the library is tiny and fully customizable
 
-```
+```xml
 <sakout.mehdi.StateViews.StateView
         android:id="@+id/status_page"
         android:layout_width="match_parent"
@@ -20,30 +20,18 @@ data or error views, the library is tiny and fully customizable
 
  </sakout.mehdi.StateViews.StateView>
 ```
-Then Add your custom states
+Then Call the appropriate state:
 
 ```java
-// Create your necessary states
-PageStatusBuilder
-                .init(this)
-                .addState(
-                    "TAG",
-                    "Title",
-                    "Description",
-                    "Icon",
-                    "Button"
-                 );
-
-// Show the state by TAG id
-mStatusPage.displayState("TAG");
-```
-
-Now, yo navigate between states, just call!
-
-```
 mStatusPage.displayLoadingState();
-// or
-mStatusPage.displayState("error");
+```
+
+```java
+mStatusPage.displayState("TAG_NAME");
+```
+
+```java
+mStatusPage.hideStates();
 ```
 
 
@@ -64,8 +52,8 @@ compile 'com.github.medyo:state-views:0.1'
 | addState(params) | Create a new state|
 | setIconColor(Int) | Set Icon color |
 | setIconSize(Intent) | Set Icon Size |
-| setTextColor(View.OnClickListener) |  set Title and description colors|
-| setFontFace(Gravity) | Set Custom font |
+| setTextColor(Int) |  set Title and description colors|
+| setFontFace(String) | Set Custom font |
 | setButtonBackgroundColor(Int) | Set Button Background color|
 | setButtonTextColor(String) | Set Button Text color|
 
@@ -74,11 +62,11 @@ compile 'com.github.medyo:state-views:0.1'
 
 | Function        | Description  |
 | ------------- |:-------------:|
-| displayState(String) | Display a state by its tag name|
+| displayState(String) | Display a state by his tag name|
 | displayLoadingState() | Display the loading state|
 | addCustomState(Intent) | Create a new state only available for the current activity, fragment...|
 | setOnStateButtonClicked(View.OnClickListener) |  Click listener for the state button|
-| applyGravity(Int) | Set Gravity for the View  |
+| applyGravity(Int) | Set View Gravity |
 
 ### 3. Samples
 #### Display an Error View
@@ -86,16 +74,31 @@ compile 'com.github.medyo:state-views:0.1'
 ![No Connection](/art/no_connection.jpg)
 
 ```java
-StateViewsBuilder
-                .init(this)
-                .setIconColor(Color.parseColor("#D2D5DA"))
-                .addState("error",
-                    "No Connection",
-                    "Error retrieving information from server.",
-                    AppCompatResources.getDrawable(this, R.drawable.ic_server_error),
-                    "Retry");
+addState(
+    "TAG_ERROR",
+    "No Connection",
+    "Error retrieving information from server.",
+    AppCompatResources.getDrawable(this, R.drawable.ic_server_error),
+    "Retry"
+    );
+
+mStatusPage.displayState("TAG_ERROR");
 ```
 
+#### Display a "no Data" View
+
+![No Data](/art/no_data.jpg)
+
+```java
+addState(
+    "TAG_NO_RESULTS",
+    "No Results Found",
+    "Unfortunately I could not find any results matching your search",
+    AppCompatResources.getDrawable(this, R.drawable.search), null
+)
+
+mStatusPage.displayState("TAG_NO_RESULTS");
+```
 
 ## License
 
