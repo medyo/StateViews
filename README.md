@@ -63,6 +63,7 @@ compile 'com.github.medyo:state-views:0.1'
 | Function        | Description  |
 | ------------- |:-------------:|
 | displayState(String) | Display a state by his tag name|
+| hideStates() | Hide all states and display data|
 | displayLoadingState() | Display the loading state|
 | addCustomState(Intent) | Create a new state only available for the current activity, fragment...|
 | setOnStateButtonClicked(View.OnClickListener) |  Click listener for the state button|
