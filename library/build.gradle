@@ -34,3 +34,6 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+archivesBaseName = 'state-views'
+apply from: rootProject.file("bintrayUpload.gradle")
