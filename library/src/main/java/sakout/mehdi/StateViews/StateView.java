@@ -21,8 +21,6 @@ import android.widget.ViewFlipper;
 import java.util.Arrays;
 import java.util.List;
 
-import sakout.mehdi.StateViews.library.R;
-
 /**
  * Created by medyo on 7/24/17.
  * This view plays as a wrapper for our different stats: Loading, Error and Normal

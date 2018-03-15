@@ -1,8 +1,9 @@
-package sakout.mehdi.StateViews;
+package sakout.mehdi.StateViews.Samples;
 
 import android.app.Application;
 import android.graphics.Color;
 import android.support.v7.content.res.AppCompatResources;
+import sakout.mehdi.StateViews.StateViewsBuilder;
 
 /**
  * Created by medyo on 11/20/17.
