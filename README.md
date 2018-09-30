@@ -40,7 +40,7 @@ mStatusPage.hideStates();
 ## Setup
 [![Snapshot](https://jitpack.io/v/medyo/stateviews.svg?style=flat-square)](https://jitpack.io/private#medyo/stateviews/-SNAPSHOT)
 ```
-compile 'com.github.medyo:state-views:0.2'
+implementation 'com.github.medyo:state-views:0.2'
 ```
 
 ## Usage
