@@ -45,7 +45,7 @@ public class App extends Application {
                         AppCompatResources.getDrawable(this, R.drawable.fingerprint),
                         "Cool")
                 .setButtonBackgroundColor(Color.parseColor("#317DED"))
-                .setButtonTextColor(Color.parseColor("#FFFFFF"))
+                //.setButtonTextColor(Color.parseColor("#FFFFFF"))
                 .setIconSize(getResources().getDimensionPixelSize(R.dimen.state_views_icon_size));
     }
 }

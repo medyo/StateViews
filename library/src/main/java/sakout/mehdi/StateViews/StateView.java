@@ -1,6 +1,8 @@
 package sakout.mehdi.StateViews;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -36,19 +38,24 @@ public class StateView extends ViewFlipper {
     LayoutInflater mInflater;
     OnClickListener mOnClickListener;
 
+    TypedArray typedArrayAttrs;
+
     public StateView(Context context) {
         super(context);
-        setupView(null);
+        setupView(context, null);
     }
 
     public StateView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setupView(attrs);
+        setupView(context, attrs);
     }
 
-    private void setupView(AttributeSet attrs) {
+    private void setupView(Context context, AttributeSet attrs) {
 
         // TODO: Add support of dynamic styles
+        if (attrs != null) {
+            this.typedArrayAttrs = context.obtainStyledAttributes(attrs, R.styleable.StateView);
+        }
 
         if (isInEditMode()) {
             return;
@@ -70,6 +77,19 @@ public class StateView extends ViewFlipper {
         if (hasPrivateConfiguration()) {
             applyCustomStyle(mBuilder, mBuilder.getStates());
         } else if (StateViewsBuilder.getInstance() != null) {
+
+            if (typedArrayAttrs != null) {
+                // Retrieve default instance
+                StateViewsBuilder instance = StateViewsBuilder.getInstance();
+                // Update builder attributes
+
+                String mButtonTextColor = typedArrayAttrs.getString(R.styleable.StateView_stateview_button_text_color);
+                instance.setButtonTextColor(Color.parseColor(mButtonTextColor != null ? mButtonTextColor : "#FFFFFF"));
+
+                applyCustomStyle(instance, StateViewsBuilder.getInstance().getStates());
+            }
+
+        } else {
             applyCustomStyle(StateViewsBuilder.getInstance(), StateViewsBuilder.getInstance().getStates());
         }
 
